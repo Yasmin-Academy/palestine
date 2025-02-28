@@ -9,7 +9,14 @@
     "racing-bars/react": "http://127.0.0.1:8080/build/react.js",
     "racing-bars/vue": "http://127.0.0.1:8080/build/vue.js"
   }
-}</script></head><body><div id="race"></div><script type="module">import { loadData, race } from 'https://racing-bars.hatemhosny.dev/lib/racing-bars.js';
+}</script>
+<style>
+  #race text.label, #race text.label.outside-bars, #race text.legend-text, #race text.valueLabel {
+    font-family: 'Cormorant Infant' !important;
+    color: red !important;
+}
+</style>
+</head><body><div id="race"></div><script type="module">import { loadData, race } from 'https://racing-bars.hatemhosny.dev/lib/racing-bars.js';
 
 const options = {
   selector: '#race',
