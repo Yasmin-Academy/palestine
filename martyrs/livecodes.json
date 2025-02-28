@@ -25,7 +25,7 @@
   },
   "style": {
     "language": "css",
-    "content": "#race { height: 95vh; }\n"
+    "content": "#race { height: 95vh; font-family: 'Cormorant Infant' !important;}\n"
   },
   "script": {
     "language": "javascript",
