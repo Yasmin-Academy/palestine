@@ -1,3 +1,7 @@
 #race {
   height: 95vh;
 }
+
+#race text.label, #race text.label.outside-bars, #race text.legend-text, #race text.valueLabel {
+    font-family: 'Cormorant Infant';
+}
