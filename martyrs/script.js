@@ -3,8 +3,6 @@ import { loadData, race } from 'https://racing-bars.hatemhosny.dev/lib/racing-ba
 const options = {
   selector: '#race',
   dataShape: 'wide',
-  title: 'Palestinian Casualties',
-  subTitle: 'data.techforpalestine.org',
   dateCounter: 'DD MMM YYYY',
   tickDuration: 500,
   labelsPosition: 'outside',
