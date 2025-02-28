@@ -1,1 +1,4 @@
-#race { height: 95vh; }
+#race {
+  height: 95vh;
+  font-family: 'Cormorant Infant';
+}
