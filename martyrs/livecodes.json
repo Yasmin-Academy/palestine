@@ -1,0 +1,68 @@
+{
+  "title": "Palestinian Casualties\n",
+  "description": "",
+  "head": "<meta charset=\"UTF-8\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+  "htmlAttrs": "lang=\"en\" class=\"\"",
+  "tags": [],
+  "autoupdate": true,
+  "autosave": false,
+  "autotest": false,
+  "delay": 1500,
+  "formatOnsave": false,
+  "view": "split",
+  "mode": "full",
+  "theme": "dark",
+  "layout": "responsive",
+  "recoverUnsaved": true,
+  "showSpacing": false,
+  "welcome": true,
+  "readonly": false,
+  "allowLangChange": true,
+  "activeEditor": "script",
+  "markup": {
+    "language": "html",
+    "content": "<div id=\"race\"></div>"
+  },
+  "style": {
+    "language": "css",
+    "content": "#race { height: 95vh; }\n"
+  },
+  "script": {
+    "language": "javascript",
+    "content": "import { loadData, race } from 'https://racing-bars.hatemhosny.dev/lib/racing-bars.js';\n\nconst options = {\n  selector: '#race',\n  dataShape: 'wide',\n  title: 'Palestinian Casualties',\n  subTitle: 'data.techforpalestine.org',\n  dateCounter: 'DD MMM YYYY',\n  tickDuration: 500,\n  labelsPosition: 'outside',\n  fixedScale: true,\n  fixedOrder: ['Injured', 'Killed', 'Children Killed', 'Women Killed', 'Medicals Killed', 'Press Killed', ''],\n  colorMap: {\n    'Injured': '#b94d4d',\n    'Killed': '#000',\n    'Children Killed': '#4db9b2',\n    'Women Killed': '#a9a9a9',\n    'Medicals Killed': '#ba0603',\n    'Press Killed': '#1858bf',\n  }\n};\n\nloadData('https://data.techforpalestine.org/api/v2/casualties_daily.min.json').then((data) => {\n  data = data.map((d) => ({\n    date: d.report_date,\n    \"Injured\": d.ext_injured_cum,\n    \"Killed\": d.ext_killed_cum,\n    \"Children Killed\": d.ext_killed_children_cum,\n    \"Women Killed\": d.ext_killed_women_cum,\n    \"Medicals Killed\": d.ext_med_killed_cum,\n    \"Press Killed\": d.ext_press_killed_cum,\n  }));\n  race(data, options);\n});\n"
+  },
+  "stylesheets": [],
+  "scripts": [],
+  "cssPreset": "",
+  "imports": {
+    "racing-bars": "http://127.0.0.1:8080/build/racing-bars.js",
+    "racing-bars/react": "http://127.0.0.1:8080/build/react.js",
+    "racing-bars/vue": "http://127.0.0.1:8080/build/vue.js"
+  },
+  "types": {},
+  "tests": {
+    "language": "typescript",
+    "content": ""
+  },
+  "tools": {
+    "enabled": "all",
+    "active": "console",
+    "status": "closed"
+  },
+  "zoom": 1,
+  "processors": [],
+  "customSettings": {
+    "imports": {}
+  },
+  "useTabs": false,
+  "tabSize": 2,
+  "lineNumbers": true,
+  "wordWrap": false,
+  "closeBrackets": true,
+  "semicolons": true,
+  "singleQuote": false,
+  "trailingComma": true,
+  "emmet": true,
+  "enableAI": false,
+  "version": "42"
+}
