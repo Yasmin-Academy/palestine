@@ -53,22 +53,5 @@ loadData('https://data.techforpalestine.org/api/v2/casualties_daily.min.json').t
     "Press Killed": d.ext_press_killed_cum,
   }));
   race(data, options);
-
-  // After the race chart is drawn, find the label for "Press Killed" and add a link
-  const labelSelector = '#race text.label';  // Adjust this based on how the labels are rendered
-  const labels = document.querySelectorAll(labelSelector);
-
-  labels.forEach(label => {
-    if (label.textContent.includes("Press Killed")) {
-      // Wrap the label text with a link
-      const originalText = label.textContent;
-      const link = document.createElement('a');
-      link.href = 'https://example.com';  // Example URL
-      link.target = '_blank';  // Open in a new tab
-      link.textContent = originalText;
-      label.textContent = '';  // Clear the original label text
-      label.appendChild(link);  // Append the link to the label
-    }
-  });
 });
 </script></body></html>
